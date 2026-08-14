@@ -264,7 +264,7 @@ def analyze_packets(filename, packet_count):
     networks = {}
     clients_by_bssid = defaultdict(set)
 
-    with PcapNgReader(filename) as pcap:
+    with PcapNgReader(str(filename)) as pcap:
         with tqdm(
             total=packet_count,
             desc="2/3 Analyzing packets",
